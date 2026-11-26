@@ -3,336 +3,222 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>המכינה החרדית האוניברסיטאית | האוניברסיטה העברית</title>
-<meta name="description" content="המכינה לבוגרי החינוך החרדי באוניברסיטה העברית בירושלים. שנה אחת, בלי ידע קודם, ומסלול לתואר בתחומים המבוקשים.">
+<title>המכינה החרדית האוניברסיטאית | חרדים באוניברסיטה העברית</title>
+<meta name="description" content="המכינה לבוגרי החינוך החרדי באוניברסיטה העברית בירושלים: מסלולי הלימוד, תנאי הקבלה ופרטי התקשרות.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1d2528;
-    --ink-soft:#4a5559;
-    --paper:#fbfaf7;
-    --card:#ffffff;
-    --line:#e4e1da;
-    --green:#0b544d;      /* HUJI logo dark green */
+    --ink:#222222;
+    --ink-soft:#555555;
+    --rule:#c9c9c9;
+    --rule-soft:#e0e0e0;
+    --bg-soft:#f4f4f4;
+    --green:#0b544d;       /* logo dark green */
     --green-dark:#073b36;
-    --green-light:#5ab595; /* HUJI logo light green */
-    --teal:#0f7287;       /* logo teal, darkened for AA contrast on white */
-    --sand:#f3efe6;
-    --ok:#1f7a4d;
+    --link:#0e7a87;        /* logo teal, AA on white */
     --err:#b3261e;
-    --radius:14px;
-    --shadow:0 1px 2px rgba(29,37,40,.06), 0 12px 32px -12px rgba(29,37,40,.18);
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Heebo",Arial,sans-serif;font-size:17px;line-height:1.65}
-  h1,h2,h3{font-family:"Frank Ruhl Libre",Georgia,serif;line-height:1.2;margin:0}
-  a{color:var(--teal)}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  body{margin:0;background:#fff;color:var(--ink);font-family:"Heebo",Arial,sans-serif;font-size:17px;line-height:1.6}
+  a{color:var(--link)}
+  .wrap{max-width:1230px;margin:0 auto;padding:0 24px}
   .skip{position:absolute;right:-9999px}
   .skip:focus{right:16px;top:12px;background:#fff;padding:8px 12px;z-index:10}
 
-  /* Header */
-  header.top{background:#fff;border-bottom:1px solid var(--line)}
-  header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
-  header.top img{height:52px;width:auto;display:block}
-  header.top .tag{font-size:14px;color:var(--ink-soft);border-inline-start:3px solid var(--green-light);padding-inline-start:10px}
+  /* Header, in the style of the HUJI OpenScholar sites */
+  .brand{display:flex;justify-content:space-between;align-items:center;padding-top:26px}
+  .brand img{height:66px;width:auto;display:block}
+  .site-name{font-weight:300;font-size:clamp(30px,4.2vw,46px);line-height:1.2;margin:22px 0 26px;color:var(--ink)}
+  .site-name a{color:inherit;text-decoration:none}
+  nav.main{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  nav.main ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 28px;min-height:70px;align-items:center}
+  nav.main a{color:var(--ink);text-decoration:none;font-size:17px}
+  nav.main a:hover{text-decoration:underline}
+  nav.main li.contact{margin-inline-start:auto}
+  nav.main li.contact a{color:var(--green);font-weight:700}
 
-  /* Hero */
-  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--sand) 100%);border-bottom:1px solid var(--line)}
-  .hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle,rgba(15,114,135,.10),transparent 70%);pointer-events:none}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;padding-top:56px;padding-bottom:64px}
-  .eyebrow{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--green);background:rgba(90,181,149,.16);
-    padding:4px 12px;border-radius:999px;margin-bottom:18px}
-  .hero h1{font-size:clamp(34px,5vw,54px);font-weight:900;color:var(--ink)}
-  .hero h1 span{color:var(--green)}
-  .lead{font-size:clamp(18px,2vw,20px);color:var(--ink-soft);margin:18px 0 28px;max-width:34em}
-  .facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .facts li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
-  .facts b{display:block;font-family:"Frank Ruhl Libre",serif;font-size:28px;line-height:1.1;color:var(--teal)}
-  .facts small{font-size:14px;color:var(--ink-soft);line-height:1.4;display:block;margin-top:4px}
+  /* Content */
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:48px;padding:34px 0 56px}
+  h1.page-title{font-weight:400;font-size:clamp(28px,3.4vw,38px);line-height:1.25;margin:0 0 26px}
+  article h2{font-size:22px;font-weight:700;margin:30px 0 8px}
+  article h2:first-of-type{margin-top:0}
+  article p{margin:0 0 12px}
+  article ul{margin:0 0 12px;padding-inline-start:22px}
+  article li{margin-bottom:4px}
+  .muted{color:var(--ink-soft);font-size:15px}
+  .contact-block p{margin:0}
+  .contact-block .label{text-decoration:underline;margin-top:14px}
+  .phone{direction:ltr;unicode-bidi:embed}
 
-  /* Form card */
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
-  .card h2{font-size:26px}
-  .card .sub{color:var(--ink-soft);font-size:15px;margin:6px 0 20px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .field{margin-bottom:14px}
-  label{display:block;font-weight:500;font-size:15px;margin-bottom:6px}
-  label .req{color:var(--green)}
-  input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid #cfcac0;
-    border-radius:10px;background:#fff;color:var(--ink);transition:border-color .15s, box-shadow .15s}
+  .file{display:flex;align-items:center;gap:14px;background:var(--bg-soft);border-top:1px solid var(--rule-soft);padding:12px 18px;margin-top:30px}
+  .file a{color:var(--link);text-decoration:none;font-weight:500}
+  .file a:hover{text-decoration:underline}
+  .file .size{margin-inline-start:auto;color:var(--ink-soft);font-size:15px;direction:ltr}
+
+  /* Form box */
+  aside .box{border:1px solid var(--rule);border-top:4px solid var(--green);padding:22px 22px 20px;position:sticky;top:20px;background:#fff}
+  aside h2{font-size:22px;font-weight:700;margin:0 0 4px}
+  aside .intro{color:var(--ink-soft);font-size:15px;margin:0 0 16px}
+  .field{margin-bottom:12px}
+  label{display:block;font-size:15px;margin-bottom:4px}
+  .req{color:var(--green)}
+  input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:16px;padding:9px 11px;border:1px solid #9b9b9b;border-radius:2px;background:#fff;color:var(--ink)}
   input[type=tel],input[type=email]{direction:ltr;text-align:right}
-  input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,114,135,.18)}
+  input:focus{outline:2px solid var(--link);outline-offset:1px;border-color:var(--link)}
   .field.invalid input{border-color:var(--err)}
-  .msg{display:none;color:var(--err);font-size:14px;margin-top:4px}
+  .msg{display:none;color:var(--err);font-size:14px;margin-top:3px}
   .field.invalid .msg{display:block}
-  .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-soft);margin:6px 0 18px;line-height:1.5}
-  .consent input{margin-top:4px;width:18px;height:18px;accent-color:var(--teal);flex:none}
+  .consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--ink-soft);margin:4px 0 16px;line-height:1.5}
+  .consent input{margin-top:3px;width:17px;height:17px;accent-color:var(--green);flex:none}
   .consent.invalid{color:var(--err)}
-  button.cta{width:100%;font:inherit;font-weight:700;font-size:18px;color:#fff;background:var(--green);border:0;border-radius:10px;
-    padding:14px 18px;cursor:pointer;transition:background .15s, transform .05s}
-  button.cta:hover{background:var(--green-dark)}
-  button.cta:active{transform:translateY(1px)}
-  button.cta[disabled]{opacity:.7;cursor:progress}
-  .privacy{font-size:13px;color:var(--ink-soft);margin:12px 0 0;text-align:center}
-  .form-error{display:none;background:#fdecea;color:var(--err);border-radius:8px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+  button.submit{width:100%;font:inherit;font-weight:500;font-size:17px;color:#fff;background:var(--green);border:0;border-radius:2px;padding:11px 16px;cursor:pointer}
+  button.submit:hover{background:var(--green-dark)}
+  button.submit[disabled]{opacity:.7;cursor:progress}
+  .form-error{display:none;color:var(--err);font-size:14px;margin-bottom:10px}
+  .privacy{font-size:13px;color:var(--ink-soft);margin:10px 0 0}
   .hp{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+  .done{display:none}
+  .done p{margin:0 0 6px}
+  .box.sent form,.box.sent > .intro{display:none}
+  .box.sent .done{display:block}
 
-  /* Teaser / locked section */
-  section.block{padding:64px 0}
-  section.block h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:8px}
-  section.block .intro{color:var(--ink-soft);margin:0 0 28px;max-width:40em}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
-  .tile h3{font-size:21px;margin-bottom:6px}
-  .tile p{margin:0;color:var(--ink-soft);font-size:16px}
-  .tile .ico{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:rgba(15,114,135,.1);color:var(--teal);margin-bottom:12px}
+  footer{border-top:1px solid var(--rule);padding:22px 0 30px;font-size:14px;color:var(--ink-soft)}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  footer img{height:48px;width:auto}
 
-  .locked{position:relative}
-  .locked .blur{filter:blur(6px);user-select:none;pointer-events:none;opacity:.7}
-  .locked .lock-cta{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
-  .lock-cta div{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px 26px;max-width:380px}
-  .lock-cta strong{display:block;font-family:"Frank Ruhl Libre",serif;font-size:22px;margin-bottom:6px}
-  .lock-cta a{display:inline-block;margin-top:10px;font-weight:700;color:#fff;background:var(--teal);padding:10px 18px;border-radius:999px;text-decoration:none}
-
-  /* Revealed content */
-  #info{display:none}
-  body.unlocked #info{display:block}
-  body.unlocked .locked-only{display:none}
-  .thanks{background:#eaf5ef;border:1px solid #bfe0cd;color:#174f35;border-radius:12px;padding:16px 18px;margin-bottom:28px;display:flex;gap:12px;align-items:center}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-  .panel h3{font-size:24px;margin-bottom:4px}
-  .panel .who{font-size:14px;color:var(--green);font-weight:700;margin-bottom:12px;display:block}
-  .panel ul{margin:0;padding-inline-start:20px}
-  .panel li{margin-bottom:6px}
-  .tracks{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
-  .tracks li{background:var(--sand);border-radius:999px;padding:4px 12px;font-size:14px;margin:0}
-  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;border-radius:10px;padding:12px 18px}
-  .btn.primary{background:var(--green);color:#fff}
-  .btn.primary:hover{background:var(--green-dark)}
-  .btn.ghost{border:1.5px solid var(--teal);color:var(--teal);background:#fff}
-  .contact{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .contact div{background:var(--sand);border-radius:12px;padding:14px 16px;font-size:15px}
-  .contact b{display:block;font-size:13px;color:var(--ink-soft);font-weight:500}
-  .contact a{color:var(--ink);font-weight:700;text-decoration:none;direction:ltr;unicode-bidi:embed}
-  .note{font-size:13px;color:var(--ink-soft);margin-top:16px}
-
-  footer{background:var(--ink);color:#cfd6d8;font-size:14px;padding:28px 0}
-  footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  footer img{height:44px;filter:brightness(0) invert(1);opacity:.9}
-
-  @media (max-width:900px){
-    .hero .wrap{grid-template-columns:1fr;gap:32px;padding-top:36px;padding-bottom:44px}
-    .grid3,.two,.contact{grid-template-columns:1fr}
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr;gap:32px}
+    aside .box{position:static}
+    nav.main li.contact{margin-inline-start:0}
   }
-  @media (max-width:520px){
+  @media (max-width:560px){
     .wrap{padding:0 16px}
-    header.top .tag{display:none}
-    header.top img{height:44px}
-    .facts{grid-template-columns:1fr 1fr 1fr;gap:8px}
-    .facts li{padding:10px}
-    .facts b{font-size:22px}
-    .facts small{font-size:12px}
-    .row{grid-template-columns:1fr;gap:0}
-    .card{padding:22px 18px}
-    section.block{padding:44px 0}
+    .brand img{height:52px}
+    nav.main ul{gap:2px 18px;padding:12px 0;min-height:0}
+    nav.main a{font-size:16px}
   }
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<a class="skip" href="#lead-form">דילוג לטופס</a>
+<a class="skip" href="#content">דילוג לתוכן העיקרי</a>
 
-<header class="top">
-  <div class="wrap">
-    <a href="https://haredim.huji.ac.il" aria-label="חרדים באוניברסיטה העברית"><img src="logo.png" alt="האוניברסיטה העברית בירושלים"></a>
-    <span class="tag">המכינה לבוגרי החינוך החרדי</span>
+<header class="wrap">
+  <div class="brand">
+    <a href="https://new.huji.ac.il" aria-label="האוניברסיטה העברית בירושלים"><img src="logo.png" alt="האוניברסיטה העברית בירושלים"></a>
   </div>
+  <div class="site-name"><a href="https://haredim.huji.ac.il">חרדים באוניברסיטה העברית</a></div>
+  <nav class="main" aria-label="ניווט בעמוד">
+    <ul>
+      <li><a href="#about">על המכינה</a></li>
+      <li><a href="#men">המכינה לגברים</a></li>
+      <li><a href="#women">המכינה לנשים</a></li>
+      <li><a href="#lead">השארת פרטים</a></li>
+      <li class="contact"><a href="#contact">יצירת קשר</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">המכינה החרדית האוניברסיטאית</span>
-        <h1>שנה אחת. <span>ומשם לתואר</span> באוניברסיטה העברית.</h1>
-        <p class="lead">מכינה לבוגרי ובוגרות החינוך החרדי, בלי צורך בידע קודם. היא מכינה לקבלה לתחומים המבוקשים, כמו רפואה, מדעי המחשב, משפטים ופסיכולוגיה, עם ליווי אישי לאורך כל הדרך.</p>
-        <ul class="facts">
-          <li><b>90%</b><small>מבוגרי המכינה מתקבלים ישירות לאוניברסיטה</small></li>
-          <li><b>שנה</b><small>משך המכינה, בלי צורך בידע קודם</small></li>
-          <li><b>Top 100</b><small>אחת ממאה האוניברסיטאות המובילות בעולם</small></li>
-        </ul>
-      </div>
+<main class="wrap layout" id="content">
+  <article>
+    <h1 class="page-title">המכינה החרדית האוניברסיטאית</h1>
 
-      <div class="card" id="lead-form">
-        <h2 class="locked-only">לקבלת כל המידע על המכינה</h2>
-        <p class="sub locked-only">ממלאים פרטים ומקבלים מיד את המסלולים, תנאי הקבלה וחוברת המכינה להורדה.</p>
-        <h2 id="done-title" style="display:none">תודה! הפרטים התקבלו</h2>
-        <p class="sub" id="done-sub" style="display:none">כל המידע פתוח עכשיו למטה. נציג המכינה יחזור אליך בהקדם.</p>
+    <h2 id="about">המכינה לבוגרי החינוך החרדי</h2>
+    <p>המכינה מיועדת לבוגרי ובוגרות החינוך החרדי ומכינה אותם ללימודי תואר באוניברסיטה העברית, כולל בחוגים כמו רפואה, מדעי המחשב, משפטים ופסיכולוגיה. הלימודים אינם דורשים ידע קודם, ומשך המכינה שנה אחת.</p>
+    <p>תעודת גמר המכינה מחליפה את תעודת הבגרות לצורך קבלה לאוניברסיטה העברית, והיא מוכרת גם במוסדות אחרים להשכלה גבוהה. 90% מבוגרי המכינה מתקבלים ישירות ללימודים באוניברסיטה.</p>
+    <p>הלומדים במכינה זכאים לליווי אישי, הכולל חונכות, שיעורי עזר והכוונה לאורך הלימודים. הלימודים מתקיימים בהפרדה, במבנה ייעודי סמוך לקמפוס הר הצופים בירושלים.</p>
 
-        <form id="form" novalidate class="locked-only">
-          <div class="form-error" id="form-error" role="alert"></div>
-          <div class="row">
-            <div class="field" data-f="firstName">
-              <label for="firstName">שם פרטי <span class="req">*</span></label>
-              <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
-              <span class="msg">נא למלא שם פרטי</span>
-            </div>
-            <div class="field" data-f="lastName">
-              <label for="lastName">שם משפחה <span class="req">*</span></label>
-              <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
-              <span class="msg">נא למלא שם משפחה</span>
-            </div>
-          </div>
-          <div class="field" data-f="phone">
-            <label for="phone">טלפון נייד <span class="req">*</span></label>
-            <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="050-0000000" required>
-            <span class="msg">נא להזין מספר טלפון תקין (10 ספרות)</span>
-          </div>
-          <div class="field" data-f="email">
-            <label for="email">כתובת אימייל <span class="req">*</span></label>
-            <input type="email" id="email" name="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required>
-            <span class="msg">נא להזין כתובת אימייל תקינה</span>
-          </div>
-          <div class="hp" aria-hidden="true"><label>אל תמלאו <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <label class="consent" id="consent-wrap">
-            <input type="checkbox" id="consent" name="consent" value="yes">
-            <span>אני מאשר/ת שהאוניברסיטה העברית תיצור איתי קשר ותשלח לי מידע על המכינה ועל התוכניות לבוגרי החינוך החרדי, בטלפון, ב-SMS ובאימייל.</span>
-          </label>
-          <button class="cta" type="submit" id="submit">קבלת המידע</button>
-          <p class="privacy">הפרטים ישמשו את צוות המכינה בלבד ולא יועברו לגורם אחר.</p>
-        </form>
+    <h2 id="men">המכינה לגברים</h2>
+    <p>הלימודים כוללים מקצועות ליבה: אנגלית, מתמטיקה, כתיבה אקדמית ומדעים מדויקים. בנוסף בוחרים מסלול אחד מתוך שלושה:</p>
+    <ul>
+      <li>הנדסה ומדעים מדויקים</li>
+      <li>מדעי הטבע והחיים (ביו־רפואה)</li>
+      <li>מדעי החברה והרוח</li>
+    </ul>
+    <p>בכל אחד מהמסלולים ניתן בונוס ברמה גבוהה. לפני המכינה מתקיימת תוכנית "קדם מכינה" בחודשי הקיץ, לתלמידים שמתחילים מבסיס של "0". ציוני הקדם משמשים כמסננת לקבלה למכינה המלאה. המכינה עצמה נמשכת תשעה חודשים, בימים א'–ה'.</p>
+
+    <h2 id="women">המכינה לנשים</h2>
+    <p>המכינה לנשים מתקיימת במסלול מדעי הטבע והחיים (ביולוגיה). מקצועות הלימוד: אנגלית, מתמטיקה, כתיבה אקדמית ומקצוע מדעי לבחירה. תעודת הסיום מאפשרת קבלה לכל המקצועות, ובוגרות המכינה יכולות להירשם לכל תואר באוניברסיטה העברית בהתאם להישגיהן במכינה.</p>
+    <p><strong>תנאי קבלה:</strong> אישור על 10–12 שנות לימוד במוסדות חרדיים, מבדק באנגלית ובמתמטיקה, וראיון אישי. הלימודים נמשכים שני סמסטרים, בימים א'–ה' בשעות הבוקר.</p>
+    <p class="muted">המועדים והשעות עשויים להשתנות. יש להתעדכן מול צוות המכינה.</p>
+
+    <h2 id="contact">צרו קשר</h2>
+    <div class="contact-block">
+      <p>כתובת: רחוב לח"י 8, ירושלים</p>
+      <p class="label">מזכירות המכינה:</p>
+      <p>טלפון: <a class="phone" href="tel:025881261">02-5881261</a> (שעות מענה טלפוני 9:00–14:00)</p>
+      <p>דוא"ל: <a href="mailto:Mechina@savion.huji.ac.il">Mechina@savion.huji.ac.il</a></p>
+      <p class="label">רישום:</p>
+      <p>מאיר כהן, אחראי רישום</p>
+      <p>טלפון: <a class="phone" href="tel:0502250493">050-2250493</a></p>
+    </div>
+
+    <div class="file">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0e7a87" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
+      <a href="https://haredim.huji.ac.il/sites/default/files/haredim/files/brvshvr_hmkynh_hkhrdyt_ldygytl_tshpv.pdf" target="_blank" rel="noopener">חוברת המכינה החרדית האוניברסיטאית</a>
+      <span class="size">383 KB</span>
+    </div>
+  </article>
+
+  <aside id="lead">
+    <div class="box" id="box">
+      <h2>השארת פרטים</h2>
+      <p class="intro">מעוניינים במידע נוסף? השאירו פרטים ונציג המכינה יחזור אליכם.</p>
+
+      <form id="form" novalidate>
+        <div class="form-error" id="form-error" role="alert"></div>
+        <div class="field">
+          <label for="firstName">שם פרטי <span class="req">*</span></label>
+          <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+          <span class="msg">נא למלא שם פרטי</span>
+        </div>
+        <div class="field">
+          <label for="lastName">שם משפחה <span class="req">*</span></label>
+          <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+          <span class="msg">נא למלא שם משפחה</span>
+        </div>
+        <div class="field">
+          <label for="phone">טלפון <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" required>
+          <span class="msg">נא להזין מספר טלפון תקין</span>
+        </div>
+        <div class="field">
+          <label for="email">דוא"ל <span class="req">*</span></label>
+          <input type="email" id="email" name="email" inputmode="email" autocomplete="email" required>
+          <span class="msg">נא להזין כתובת דוא"ל תקינה</span>
+        </div>
+        <div class="hp" aria-hidden="true"><label>אין למלא <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent" id="consent-wrap">
+          <input type="checkbox" id="consent" name="consent" value="yes">
+          <span>אני מסכים/ה שהאוניברסיטה העברית תיצור איתי קשר ותשלח לי מידע על המכינה בטלפון, ב-SMS ובדוא"ל.</span>
+        </label>
+        <button class="submit" type="submit" id="submit">שליחה</button>
+        <p class="privacy">הפרטים ישמשו את צוות המכינה בלבד.</p>
+      </form>
+
+      <div class="done" role="status" tabindex="-1" id="done">
+        <p><strong>תודה, הפרטים התקבלו.</strong></p>
+        <p>נציג המכינה יחזור אליכם בהקדם.</p>
       </div>
     </div>
-  </section>
-
-  <!-- What you get (always visible) -->
-  <section class="block locked-only">
-    <div class="wrap">
-      <h2>למה דווקא המכינה של העברית</h2>
-      <p class="intro">התעודה של המכינה מחליפה את תעודת הבגרות לצורך קבלה לאוניברסיטה העברית, ומוכרת גם במוסדות נוספים בארץ.</p>
-      <div class="grid3">
-        <div class="tile">
-          <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
-          <h3>מסלול לתואר</h3>
-          <p>הכנה ממוקדת לקבלה לתחומים המבוקשים, עם יתרון משמעותי בקבלה.</p>
-        </div>
-        <div class="tile">
-          <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-          <h3>ליווי אישי</h3>
-          <p>חונכות, שיעורי עזר וליווי צמוד לאורך הלימודים. וגם סיוע כלכלי.</p>
-        </div>
-        <div class="tile">
-          <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h3>מסגרת מותאמת</h3>
-          <p>כיתות נפרדות, בבניין ייעודי סמוך לקמפוס הר הצופים בירושלים.</p>
-        </div>
-      </div>
-
-      <div class="locked" style="margin-top:28px">
-        <div class="blur two" aria-hidden="true">
-          <div class="panel"><h3>מכינה לגברים</h3><p>שלושה מסלולים לבחירה, מקצועות ליבה, מבנה הלימודים ובונוס בנקודות…</p></div>
-          <div class="panel"><h3>מכינה לנשים</h3><p>מסלול מדעי הטבע והחיים, תנאי קבלה, ימים ושעות לימוד…</p></div>
-        </div>
-        <div class="lock-cta">
-          <div>
-            <strong>המסלולים ותנאי הקבלה</strong>
-            <span>נפתחים מיד אחרי מילוי הפרטים</span><br>
-            <a href="#lead-form">למילוי הפרטים</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gated content -->
-  <section class="block" id="info" tabindex="-1">
-    <div class="wrap">
-      <div class="thanks" role="status">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <span>הפרטים התקבלו. הנה כל המידע על המכינה.</span>
-      </div>
-
-      <h2>המכינה לבוגרי החינוך החרדי</h2>
-      <p class="intro">שנה אחת של לימודים, בלי צורך בידע קודם. תעודת המכינה מחליפה את תעודת הבגרות לצורך קבלה לאוניברסיטה העברית, ו-90% מהבוגרים מתקבלים אליה ישירות.</p>
-
-      <div class="two">
-        <div class="panel">
-          <span class="who">לגברים</span>
-          <h3>שלושה מסלולים לבחירה</h3>
-          <ul class="tracks">
-            <li>הנדסה ומדעים מדויקים</li>
-            <li>מדעי הטבע והחיים (ביו־רפואה)</li>
-            <li>מדעי החברה והרוח</li>
-          </ul>
-          <ul style="margin-top:16px">
-            <li>מקצועות ליבה: אנגלית, מתמטיקה, כתיבה אקדמית ומדעים מדויקים</li>
-            <li>בונוס ברמה גבוהה בנקודות בכל אחד מהמסלולים</li>
-            <li>תוכנית "קדם מכינה" בקיץ, לסגירת פערים למי שמתחיל מאפס</li>
-            <li>לימודים בימים א'–ה' לאורך תשעה חודשים</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <span class="who">לנשים</span>
-          <h3>מדעי הטבע והחיים</h3>
-          <ul class="tracks"><li>מסלול ביולוגיה</li></ul>
-          <ul style="margin-top:16px">
-            <li>מקצועות ליבה: אנגלית, מתמטיקה, כתיבה אקדמית ומקצוע מדעי לבחירה</li>
-            <li>התעודה מאפשרת הרשמה לכל התארים באוניברסיטה, לפי ההישגים במכינה</li>
-            <li>תנאי קבלה: אישור על 10–12 שנות לימוד במוסדות חרדיים, מבחן מיפוי באנגלית ובמתמטיקה, וראיון אישי</li>
-            <li>שני סמסטרים, ימים א'–ה', בשעות הבוקר</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="btn primary" href="https://haredim.huji.ac.il/sites/default/files/haredim/files/brvshvr_hmkynh_hkhrdyt_ldygytl_tshpv.pdf" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
-          להורדת חוברת המכינה (PDF)
-        </a>
-        <a class="btn ghost" href="https://haredim.huji.ac.il/%D7%94%D7%9E%D7%9B%D7%99%D7%A0%D7%94-%D7%94%D7%97%D7%A8%D7%93%D7%99%D7%AA-1" target="_blank" rel="noopener">לאתר המכינה</a>
-      </div>
-
-      <div class="contact">
-        <div><b>רכז רישום</b>מאיר כהן · <a href="tel:0502250493">050-2250493</a></div>
-        <div><b>מזכירות המכינה (9:00–14:00)</b><a href="tel:025881261">02-5881261</a></div>
-        <div><b>אימייל</b><a href="mailto:Mechina@savion.huji.ac.il">Mechina@savion.huji.ac.il</a></div>
-      </div>
-      <p class="note">כתובת: רחוב לח"י 8, ירושלים. המועדים והשעות עשויים להשתנות, ויש לוודא אותם מול צוות המכינה.</p>
-    </div>
-  </section>
+  </aside>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© האוניברסיטה העברית בירושלים · חרדים באוניברסיטה העברית</span>
+    <span>כל הזכויות שמורות © האוניברסיטה העברית בירושלים</span>
     <img src="footer_logo.png" alt="">
   </div>
 </footer>
 
 <script>
-/* ===== הגדרה: הדביקו כאן את כתובת ה-Web App של Google Apps Script ===== */
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbyLMOWoUibByQYJn8NiLW1u1Eb0CX08y2R2IbIgpXqIhlXbyycnA3Rh5uFXT5ymxN4D/exec";   // לדוגמה: "https://script.google.com/macros/s/XXXX/exec"
-const STORAGE_KEY = "mechina_lead_v1";
-/* ======================================================================= */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyLMOWoUibByQYJn8NiLW1u1Eb0CX08y2R2IbIgpXqIhlXbyycnA3Rh5uFXT5ymxN4D/exec";
 
 const $ = s => document.querySelector(s);
 const form = $("#form");
 const params = new URLSearchParams(location.search);
-
-function unlock(scroll){
-  document.body.classList.add("unlocked");
-  $("#done-title").style.display = "block";
-  $("#done-sub").style.display = "block";
-  if (scroll) { const el = $("#info"); el.scrollIntoView({behavior:"smooth", block:"start"}); el.focus({preventScroll:true}); }
-}
-try { if (localStorage.getItem(STORAGE_KEY)) unlock(false); } catch(e) {}
 
 function normPhone(v){
   let d = v.replace(/\D/g, "");
@@ -351,10 +237,16 @@ function check(name){
   input.setAttribute("aria-invalid", String(!ok));
   return ok;
 }
-Object.keys(validators).forEach(n => form.elements[n].addEventListener("blur", () => { if (form.elements[n].value) check(n); }));
-Object.keys(validators).forEach(n => form.elements[n].addEventListener("input", () => {
-  if (form.elements[n].closest(".field").classList.contains("invalid")) check(n);
-}));
+Object.keys(validators).forEach(n => {
+  form.elements[n].addEventListener("blur", () => { if (form.elements[n].value) check(n); });
+  form.elements[n].addEventListener("input", () => { if (form.elements[n].closest(".field").classList.contains("invalid")) check(n); });
+});
+
+function finish(){
+  $("#box").classList.add("sent");
+  $("#done").focus();
+}
+function showError(t){ const el = $("#form-error"); el.textContent = t; el.style.display = "block"; }
 
 form.addEventListener("submit", async e => {
   e.preventDefault();
@@ -363,12 +255,11 @@ form.addEventListener("submit", async e => {
   const consent = $("#consent").checked;
   $("#consent-wrap").classList.toggle("invalid", !consent);
   if (results.includes(false) || !consent) {
-    const first = form.querySelector(".field.invalid input") || $("#consent");
-    first.focus();
-    if (!consent && !results.includes(false)) showError("נא לאשר את קבלת המידע כדי להמשיך.");
+    (form.querySelector(".field.invalid input") || $("#consent")).focus();
+    if (!consent && !results.includes(false)) showError("יש לאשר את יצירת הקשר כדי לשלוח את הפרטים.");
     return;
   }
-  if (form.elements.website.value) { unlock(true); return; } // bot trap
+  if (form.elements.website.value) { finish(); return; } // bot trap
 
   const data = {
     firstName: form.elements.firstName.value.trim(),
@@ -387,20 +278,14 @@ form.addEventListener("submit", async e => {
   const btn = $("#submit");
   btn.disabled = true; btn.textContent = "שולח…";
   try {
-    if (ENDPOINT) {
-      // text/plain + no-cors avoids a CORS preflight to Apps Script
-      await fetch(ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data) });
-    } else {
-      console.warn("[landing] ENDPOINT is empty, lead not saved:", data);
-    }
-    try { localStorage.setItem(STORAGE_KEY, "1"); } catch(e) {}
-    unlock(true);
+    // text/plain + no-cors avoids a CORS preflight to Apps Script
+    await fetch(ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data) });
+    finish();
   } catch (err) {
-    showError("לא הצלחנו לשלוח את הפרטים. כדאי לבדוק את החיבור לאינטרנט ולנסות שוב.");
-    btn.disabled = false; btn.textContent = "קבלת המידע";
+    showError("השליחה לא הצליחה. יש לבדוק את החיבור לאינטרנט ולנסות שוב.");
+    btn.disabled = false; btn.textContent = "שליחה";
   }
 });
-function showError(t){ const el = $("#form-error"); el.textContent = t; el.style.display = "block"; }
 </script>
 </body>
 </html>
